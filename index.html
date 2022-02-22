@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PID test</title>
+
+    <meta name="robots" content="noindex" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+
+    <style>
+      .table.nowrap .dataset, .table.nowrap .publisher, .table.nowrap .country{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      body {
+        font-size: 14px;
+        overscroll-behavior-x: none;
+      }
+      .bad {
+        background: tomato;
+        color: white;
+      }
+      .warning {
+        background: orange;
+      }
+      .spark span {
+        padding: 0 5px;
+        height: 1em;
+        display: inline-block;
+      }
+      .good {
+        background: rgb(19, 186, 66);
+      }
+      .pretty_good {
+        background: #4cd55e
+      }
+      .okay {
+        background: rgb(150, 208, 84);
+      }
+      .not_good {
+        background: rgb(206, 206, 34);
+      }
+      .bad {
+        background: tomato;
+      }
+      .critical {
+        background: #d13813; /* the color of a wound */
+      }
+      .warning {
+        background: orange;
+      }
+      .spark span.invalid {
+        background: #aaa;
+      }
+      .spark span.deletion {
+        height: 0.5em;
+      }
+      .country {
+        width: 100px;
+      }
+      .publisher {
+        width: 350px;
+      }
+      .dataset {
+        width: 350px;
+      }
+
+      [data-tooltip] {
+        position: relative;
+      }
+      [data-tooltip]:not([data-tooltip=""]):hover:before {
+        display:block;
+      }
+      [data-tooltip]:before {
+        content: attr(data-tooltip);
+        position:absolute;
+        
+        /* position */
+        transform: translateX(-50%);
+        left: 50%;
+        top: 24px;
+        
+        /* basic styles */
+        padding:3px 5px;
+        font-size: 12px;
+        border-radius:10px;
+        background:#000;
+        color: #fff;
+        text-align:center;
+        z-index: 100;
+        white-space: pre;
+
+        display:none; /* hide by default */
+      }
+
+      th input[type="text"] {
+        width: 100px;
+      }
+    </style>
+  </head>
+
+  <body style="margin: 24px">
+    <div class="table-container">
+      <table id="table" class="table nowrap" style="width: 100%; display: none">
+        <thead id="tableHeader">
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+        <tfoot id="tableFooter">
+        </tfoot>
+      </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
